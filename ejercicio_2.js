@@ -1,14 +1,18 @@
-const productos = ["teclado", "mouse", "pantalla"]
+// lista inicial
+const productos = ["teclado", "mouse", "pantalla"];
 
-let copia = agregarProducto (productos, "cable")
+function agregarProducto(lista, nuevoProducto) {
+    // creo nueva lista sin tocar la original
+    const nueva = [...lista, nuevoProducto];
 
-function agregarProducto(productos, nuevoProducto) {
-    const copiaLista = [...Productos]
-    copiaLista.push (nuevoProducto)
-    return copiaLista
+    // muestro las 2 listas
+    console.log("original:", lista);
+    console.log("nueva:", nueva);
+
+    return nueva;
 }
 
-console.log(productos);
-console.log(copia);
+// imprimo
+agregarProducto(productos, "impresora");
 
 

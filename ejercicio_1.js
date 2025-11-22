@@ -1,19 +1,29 @@
-const usuarioPrincipal = []
-let nombre = "karol";
-let edad = 18;
+// usuario principal como objeto
+let usuarioPrincipal = {
+    nombre: "karol",
+    edad: 18
+};
 
-function registrarUsuarios (nombre, edad, ...usuario){
-console.log (nombre,edad, usuario)
-return {
-    nombre, edad, usuario
+function registrarUsuarios(usuarioPrincipal, ...usuarios) {
+    // saco nombre y edad
+    const { nombre, edad } = usuarioPrincipal;
+
+    // muestro datos para revisar
+    console.log(nombre, edad, usuarios);
+
+    // retorno el objeto final
+    return {
+        nombre,
+        edad,
+        usuarios
+    };
 }
-}
 
-let respuesta = registrarUsuarios (nombre, edad, "juan", "santi", "sara", "olga")
+// llamo la función con extras
+let respuesta = registrarUsuarios(usuarioPrincipal, "juan", "sara", "luz");
 
-const {nombre:a,edad:b, usuario} = respuesta
+// saco valores del retorno
+const { nombre:a, edad:b, usuarios } = respuesta;
 
 console.log(respuesta);
-console.log(a,b, usuario.length);
-
-
+console.log(a, b, usuarios.length); // cantidad de extras
